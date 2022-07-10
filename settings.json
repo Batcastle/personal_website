@@ -1,0 +1,8 @@
+{
+	"time-format-displayed": "%B %d, %Y",
+	"time-format-stored": "%Y - %m - %d",
+	"synopsis-length": 141,
+	"freetext-match-threshold": 3,
+	"metadata-location": "cook_book/meta",
+	"post-location": "cook_book/recipes"
+}
