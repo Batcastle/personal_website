@@ -14,7 +14,7 @@
 </br>
 </br>
 <div class="box">
-    <form method="POST" action="/wiki/search">
+    <form method="POST" action="/cook_book/search">
         <h2>
             Search
         </h2>
@@ -27,6 +27,80 @@
             { tags_list }
         <div class="control">
                 { tags }
+        </div>
+        </br>
+        <h2>
+            Dietary Requirements
+        </h2>
+        <div>
+            </br>
+            <h3>
+                Gluten-Free
+            </h3>
+            <div class="switch-toggle switch-3 switch-candy" id="gluten-toggle">
+                <input id="gluten-free-on" name="state-g" value="true" type="radio" checked="" />
+                <label for="on" onclick="">Yes</label>
+
+                <input id="gluten-free-na" name="state-g" value="none" type="radio" checked="checked" />
+                <label for="na" onclick="">N/A</label>
+
+                <input id="gluten-free-off" name="state-g" value="false" type="radio"/>
+                <label for="off" onclick="">No</label>
+
+                <a></a>
+            </div>
+            </br>
+            <h3>
+                Vegan
+            </h3>
+            <div class="switch-toggle switch-3 switch-candy" id="vegan-toggle">
+                <input id="vegan-on" name="state-d" type="radio" value="true" checked="" />
+                <label for="on" onclick="">Yes</label>
+
+                <input id="vegan-na" name="state-d" type="radio" value="none" checked="checked"  />
+                <label for="na" onclick="">N/A</label>
+
+                <input id="vegan-off" name="state-d" type="radio" value="false"/>
+                <label for="off" onclick="">No</label>
+
+                <a></a>
+            </div>
+            </br>
+            <h3>
+                Vegetarian
+            </h3>
+            <div class="switch-toggle switch-3 switch-candy" id="vegetarian-toggle">
+                <input id="vegetarian-on" name="state-v" type="radio" value="true" checked="" />
+                <label for="on" onclick="">Yes</label>
+
+                <input id="vegetarian-na" name="state-v" type="radio" value="none" checked="checked"  />
+                <label for="na" onclick="">N/A</label>
+
+                <input id="vegetarian-off" name="state-v" type="radio" value="false" />
+                <label for="off" onclick="">No</label>
+
+                <a></a>
+            </div>
+            </br>
+            <h3>
+                Kosher
+            </h3>
+            <div class="switch-toggle switch-3 switch-candy" id="kosher-toggle">
+                <input id="kosher-on" name="state-k" type="radio" value="true" checked="" />
+                <label for="on" onclick="">Yes</label>
+
+                <input id="kosher-na" name="state-k" type="radio" value="none" checked="checked"  />
+                <label for="na" onclick="">N/A</label>
+
+                <input id="kosher-off" name="state-k" type="radio" value="false" />
+                <label for="off" onclick="">No</label>
+
+                <a></a>
+            </div>
+        </div>
+        </br>
+        <div class="control">
+            <button class="input button is-block is-info is-large is-fullwidth" name="wiki_search">Search Cookbook</button>
         </div>
     </form>
     </br>

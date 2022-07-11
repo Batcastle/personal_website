@@ -203,8 +203,45 @@ def wiki_search():
     else:
         output = wiki.list_posts()
     search_text = flask.request.form.get("free_text").split(" ")
-    output = wiki.search_freetext(search_text, output)
+    if search_text != [""]:
+        output = wiki.search_freetext(search_text, output)
+    tbs = get_toggle_button_values(flask.request.form)
+    for each in tbs:
+        if tbs[each] is not None:
+            output = wiki.search_flags(each, output, tbs[each])
     return wiki_homepage(show=output)
+
+
+def get_toggle_button_values(form):
+    """Get value from toggle buttons for search"""
+    data = {"GLUTEN-FREE": None, "VEGAN": None, "VEGETARIAN": None,
+            "KOSHER": None}
+    # Gluten
+    if form.get("state-g") == "true":
+        data["GLUTEN-FREE"] = True
+    elif form.get("state-g") == "false":
+        data["GLUTEN-FREE"] = False
+
+    # Vegan
+    if form.get("state-d") == "true":
+        data["VEGAN"] = True
+    elif form.get("state-d") == "false":
+        data["VEGAN"] = False
+
+    # Vegetarian
+    if form.get("state-v") == "true":
+        data["VEGETARIAN"] = True
+    elif form.get("state-v") == "false":
+        data["VEGETARIAN"] = False
+
+    # Kosher
+    if form.get("state-k") == "true":
+        data["KOSHER"] = True
+    elif form.get("state-k") == "false":
+        data["KOSHER"] = False
+
+    return data
+
 
 
 @APP.route("/cook_book/<title>")

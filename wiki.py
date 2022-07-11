@@ -220,7 +220,7 @@ def search_freetext(text, posts):
     return output
 
 
-def search_flags(flag, posts, value=True):
+def search_flags(flag, posts, value):
     """Search provided post's flags for matching values"""
     # get post metadata
     post_data = {}
