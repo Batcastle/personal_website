@@ -218,3 +218,15 @@ def search_freetext(text, posts):
         if post_data[each] >= common.settings["freetext-match-threshold"]:
             output.append(each)
     return output
+
+
+def search_flags(flag, posts, value=True):
+    """Search provided post's flags for matching values"""
+    # get post metadata
+    post_data = {}
+    for each in posts:
+        post_data[each] = get_post_metadata(each)
+    for each in list(post_data.keys()):
+        if post_data[each][flag.upper()] is not value:
+            del post_data[each]
+    return list(post_data.keys())
